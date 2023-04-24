@@ -1,0 +1,13 @@
+---
+title: "Data and Instructions"
+---
+
+### **Data and instructions**
+
+\- Download the set of curated data at [link.](http://bioconductor.org/packages/release/data/experiment/html/SimBenchData.html) Details about the data can be found in the package and can also be browsed under the shiny tab "More".
+
+\- Run your own method.
+
+\- Evaluate the simulated data against the real data across the set of criteria we have curated at [link.](https://github.com/SydneyBioX/SimBench)
+
+\- Upload the result to the panel Submit your data.
