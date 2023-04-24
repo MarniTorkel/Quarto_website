@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -58,6 +92,8 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -175,6 +211,73 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
+<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="9" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 8;"><span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>vars <span class="op">=</span> [<span class="st">"Sepal.Length"</span><span class="op">,</span> <span class="st">"Sepal.Width"</span><span class="op">,</span> <span class="st">"Petal.Length"</span><span class="op">,</span> <span class="st">"Petal.Width"</span>]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>viewof xcol <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(vars<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"X Variable"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> vars[<span class="dv">0</span>]})</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>viewof ycol <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(vars<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Y Variable"</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> vars[<span class="dv">1</span>]})</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>viewof count <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">9</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Cluster Count"</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">value</span><span class="op">:</span> <span class="dv">3</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
+<div class="g-col-24">
+<div class="cell panel-fill">
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="16" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 15;"><span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">type</span><span class="op">:</span> <span class="st">"ordinal"</span><span class="op">,</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">scheme</span><span class="op">:</span> <span class="st">"category10"</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(<span class="fu">transpose</span>(selectedData)<span class="op">,</span> {</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> xcol<span class="op">,</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> ycol<span class="op">,</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> (d<span class="op">,</span> i) <span class="kw">=&gt;</span> clusters<span class="op">.</span><span class="at">cluster</span>[i]<span class="op">,</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(clusters<span class="op">.</span><span class="at">centers</span><span class="op">,</span> { </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d[<span class="dv">0</span>]<span class="op">,</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> d[<span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>      <span class="dt">r</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="st">"black"</span><span class="op">,</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> (d<span class="op">,</span> i) <span class="kw">=&gt;</span> i <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>
 <script type="application/shiny-prerendered" data-context="server-start">
 library(readr)
@@ -193,6 +296,8 @@ clusters <- reactive({
   req(input$count)
   kmeans(selectedData(), input$count)
 })
+
+selectedData
 
 ojs_define(selectedData, clusters)
 
@@ -233,13 +338,24 @@ ojs_define <- function(..., .session = shiny::getDefaultReactiveDomain()) {
 <!--html_preserve-->
 
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33]}},"value":[{"type":"character","attributes":{},"value":["base","cli","compiler","datasets","digest","ellipsis","evaluate","fastmap","graphics","grDevices","htmltools","htmlwidgets","httpuv","jsonlite","knitr","later","lifecycle","magrittr","methods","mime","promises","R6","Rcpp","rlang","rmarkdown","rstudioapi","shiny","stats","tools","utils","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["4.2.1","3.4.0","4.2.1","4.2.1","0.6.30","0.3.2","0.20","1.1.1","4.2.1","4.2.1","0.5.4","1.6.1","1.6.9","1.8.4","1.42","1.3.0","1.0.3","2.0.3","4.2.1","0.12","1.2.0.1","2.5.1","1.0.10","1.1.0","2.20","0.14","1.7.4","4.2.1","4.2.1","4.2.1","0.37","1.8-4","2.3.7"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32]}},"value":[{"type":"character","attributes":{},"value":["base","cli","compiler","datasets","digest","ellipsis","evaluate","fastmap","graphics","grDevices","htmltools","htmlwidgets","httpuv","jsonlite","knitr","later","lifecycle","magrittr","methods","mime","promises","R6","Rcpp","rlang","rmarkdown","shiny","stats","tools","utils","xfun","xtable","yaml"]},{"type":"character","attributes":{},"value":["4.2.1","3.4.0","4.2.1","4.2.1","0.6.30","0.3.2","0.20","1.1.1","4.2.1","4.2.1","0.5.4","1.6.1","1.6.9","1.8.4","1.42","1.3.0","1.0.3","2.0.3","4.2.1","0.12","1.2.0.1","2.5.1","1.0.10","1.1.0","2.20","1.7.4","4.2.1","4.2.1","4.2.1","0.37","1.8-4","2.3.7"]}]}]}
 </script>
 <!--/html_preserve-->
 
 
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"vars = [\"Sepal.Length\", \"Sepal.Width\", \"Petal.Length\", \"Petal.Width\"]\nviewof xcol = Inputs.select(vars, {label: \"X Variable\", value: vars[0]})\nviewof ycol = Inputs.select(vars, {label: \"Y Variable\", value: vars[1]})\nviewof count = Inputs.range([1, 9], {label: \"Cluster Count\", step: 1, value: 3})\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"Plot.plot({\n  color: {\n    type: \"ordinal\",\n    scheme: \"category10\"\n  },\n  marks: [\n    Plot.dot(transpose(selectedData), {\n      x: xcol,\n      y: ycol,\n      fill: (d, i) => clusters.cluster[i],\n    }),\n    Plot.dot(clusters.centers, { \n      x: d => d[0],\n      y: d => d[1],\n      r: 10,\n      stroke: \"black\",\n      fill: (d, i) => i + 1\n    }),\n  ]\n})\n"},{"methodName":"interpretQuiet","source":"shinyInput('xcol')"},{"methodName":"interpretQuiet","source":"shinyInput('ycol')"},{"methodName":"interpretQuiet","source":"shinyInput('count')"}]}
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
