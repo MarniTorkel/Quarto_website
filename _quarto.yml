@@ -1,0 +1,64 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Living Benchmark"
+  #favicon: 
+  #page-navigation: true
+  page-footer: "Copyright 2023, Living Benchmark"
+  navbar:
+    #logo: "images/logo.jpg"
+    search: true
+    right:
+      - text: "Home"
+        file: index.qmd
+      - text: "Background"
+        file: background.qmd
+      - text: "Overview"
+        file: overview.qmd
+      - text: "Data and instructions"
+        file: data.qmd
+      - text: "Submission Form"
+        file: submission.qmd
+      - text: "Publication"
+        file: publication.qmd
+      - text: "Shiny Interaction"
+        href: interactive.qmd
+      - text: "Shiny"
+        href: http://shiny.maths.usyd.edu.au/SimBench/
+        
+        
+  sidebar:
+    - title: "Background"
+      style: "docked"
+      contents:
+        - background.qmd
+        - usefulwebsites.qmd
+        
+    - title: "Overview"
+      style: "docked"
+      contents:
+        - overview.qmd
+        - overview1.qmd
+        - overview2.qmd
+        
+    - title: "Comparison"
+      contents:
+        - comparison.qmd
+    
+    - title: "Shiny Interaction"
+      contents:
+        - interactive.qmd
+        - observable.qmd
+    
+    
+
+format:
+  html:
+    theme: lux
+    css: styles.css
+    toc: true
+
+editor: visual
+

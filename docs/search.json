@@ -7,13 +7,6 @@
     "text": "Background\nGiven the number of simulation tools designed for single-cell RNA-seq data, it is critical to have a benchmark system that compares their relative performance under same set of data and same set of criteria\nSimBench together with this website is developed for the exact purpose.\nWe invite all interested researchers to run their methods on the set of data we have curated, upload their result to this website and participate in this public leaderboard of scRNA-seq simulation tools"
   },
   {
-    "objectID": "comparison.html",
-    "href": "comparison.html",
-    "title": "Comparison",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
     "objectID": "data.html",
     "href": "data.html",
     "title": "Data and Instructions",
@@ -30,30 +23,30 @@
   {
     "objectID": "interactive.html",
     "href": "interactive.html",
-    "title": "Quarto (Interactive Example)",
+    "title": "Shiny Interactive",
     "section": "",
     "text": "In this example, we will try to define a Quarto document to showcase how we can use shiny.i18n in an interactive manner. To learn more about Quarto and how it integrates with R/Shiny, check out the official documentation."
   },
   {
     "objectID": "interactive.html#introduction",
     "href": "interactive.html#introduction",
-    "title": "Quarto (Interactive Example)",
+    "title": "Shiny Interactive",
     "section": "",
     "text": "In this example, we will try to define a Quarto document to showcase how we can use shiny.i18n in an interactive manner. To learn more about Quarto and how it integrates with R/Shiny, check out the official documentation."
   },
   {
     "objectID": "interactive.html#an-illustration",
     "href": "interactive.html#an-illustration",
-    "title": "Quarto (Interactive Example)",
+    "title": "Shiny Interactive",
     "section": "An Illustration",
-    "text": "An Illustration\nHere, we translate a famous quote from the one of the most famous people to have ever existed in tech, Steve Jobs…\n\n\n\nSelect language: \n\nEnglish 🇬🇧\nPolish 🇵🇱\nGerman 🇩🇪\nFrench 🇫🇷\n\n\n\n\n\n\n\n\n— Steve Jobs"
+    "text": "An Illustration\nHere, we translate a famous quote from the one of the most famous people to have ever existed in tech, Steve Jobs…\n\n\n\nSelect language: \n\nEnglish GB\nPolish PL\nGerman DE\nFrench FR\n\n\n\n\n\n\n\n\n— Steve Jobs"
   },
   {
     "objectID": "observable.html",
     "href": "observable.html",
     "title": "ObservableJS",
     "section": "",
-    "text": "data = FileAttachment(\"data/palmer-penguins.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nviewof bill_length_min = Inputs.range(\n  [32, 50], \n  {value: 35, step: 1, label: \"Bill length (min):\"}\n)\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"], \n  { value: [\"Torgersen\", \"Biscoe\"], \n    label: \"Islands:\"\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfiltered = data.filter(function(penguin) {\n  return bill_length_min &lt; penguin.bill_length_mm &&\n         islands.includes(penguin.island);\n})\n\n\n\n\n\n\n\nPlot.rectY(filtered, \n  Plot.binX(\n    {y: \"count\"}, \n    {x: \"body_mass_g\", fill: \"species\", thresholds: 20}\n  ))\n  .plot({\n    facet: {\n      data: filtered,\n      x: \"sex\",\n      y: \"species\",\n      marginRight: 80\n    },\n    marks: [\n      Plot.frame(),\n    ]\n  }\n)"
+    "text": "data = FileAttachment(\"data/palmer-penguins.csv\").csv({ typed: true })\n\n\n\n\n\n\n\nviewof bill_length_min = Inputs.range(\n  [32, 50], \n  {value: 35, step: 1, label: \"Bill length (min):\"}\n)\nviewof islands = Inputs.checkbox(\n  [\"Torgersen\", \"Biscoe\", \"Dream\"], \n  { value: [\"Torgersen\", \"Biscoe\"], \n    label: \"Islands:\"\n  }\n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfiltered = data.filter(function(penguin) {\n  return bill_length_min &lt; penguin.bill_length_mm &&\n         islands.includes(penguin.island);\n})\n\n\n\n\n\n\n\nInputs.table(filtered)\n\n\n\n\n\n\n\nPlot.rectY(filtered, \n  Plot.binX(\n    {y: \"count\"}, \n    {x: \"body_mass_g\", fill: \"species\", thresholds: 20}\n  ))\n  .plot({\n    facet: {\n      data: filtered,\n      x: \"sex\",\n      y: \"species\",\n      marginRight: 80\n    },\n    marks: [\n      Plot.frame(),\n    ]\n  }\n)"
   },
   {
     "objectID": "overview.html",
@@ -89,6 +82,41 @@
     "title": "Publication",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "submission.html",
+    "href": "submission.html",
+    "title": "Form Submission",
+    "section": "",
+    "text": "This page demonstrates how to use the form shortcode. A form consists of a set of YAML keys and a shortcode.\nInsert the shortcode where you want the form to appear. The form is wrapped in a div which you can use to style the form, using CSS. The default form style uses whatever theme you have chosen from the Bootswatch themes supported by Quarto.\nIf you use a custom theme, you will likely need to provide CSS for the form element classes, if you don’t like the default."
+  },
+  {
+    "objectID": "submission.html#form-fields",
+    "href": "submission.html#form-fields",
+    "title": "Form Submission",
+    "section": "Form Fields",
+    "text": "Form Fields\nThe fields element is a list of fields, as outlined below. All inputs are strings, unless mentioned:\n\n\n\n\n\n\n\n\nKey\nDescription\nRequired?\n\n\n\n\nname\nThe name for the field\nYes\n\n\ntype\nThe input type: see list below\nYes\n\n\nid\nThe id for the input\nYes\n\n\nlabel\nThe label to display for the input\nYes\n\n\nvalues\nA list of values for multiple inputs\nradio, checkbox, select\n\n\nwidth\ninteger: Width of input\nNo\n\n\nheight\ninteger: Height of input\nNo\n\n\nrequired\nboolean: Require a response1\nNo\n\n\nmultiple\nboolean: Allow multiple values\nNo\n\n\nsize\ninteger: Number of inputs to display\nNo\n\n\n\nThe currently supported input type-s are:\n\n\n\n\n\n\n\n\n\nType\nDescription\nRequireable?\nMultiple valued\n\n\n\n\ntext\nSingle-line text input\nYes\nNo\n\n\ntextarea\nA large, multi-line text input\nNo\nNo\n\n\ncheckbox\nA series of checkboxes\nYes2\nYes\n\n\nradio\nSeries of radio options\nYes3\nNo\n\n\nselect\nDropdown selection, styled by CSS\nYes\nNo\n\n\nemail\nEmail-only text input\nNo\nNo\n\n\nfile\nFile-submission button\nNo\nNo"
+  },
+  {
+    "objectID": "submission.html#form-field-values",
+    "href": "submission.html#form-field-values",
+    "title": "Form Submission",
+    "section": "Form Field Values",
+    "text": "Form Field Values\nThe values for multi-line inputs are specified as\nform:\n  ...\n  fields:\n  - ...:\n    values:\n    - text: Radio 1\n      value: 1\n\ntext is the label text for the option to be displayed\nvalue is the value selecting the option will select"
+  },
+  {
+    "objectID": "submission.html#non-field-form-entries",
+    "href": "submission.html#non-field-form-entries",
+    "title": "Form Submission",
+    "section": "Non-field Form Entries",
+    "text": "Non-field Form Entries\nYou can also add arbitrary text using the text field:\nform:\n  ...\n  fields:\n  - text: \"Some  text\"\n  - text: ---\nUsing --- will insert a horizontal rule in the form."
+  },
+  {
+    "objectID": "submission.html#footnotes",
+    "href": "submission.html#footnotes",
+    "title": "Form Submission",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nOnly works for certain types of fields↩︎\n*poorly↩︎\n*poorly↩︎"
   },
   {
     "objectID": "usefulwebsites.html",
